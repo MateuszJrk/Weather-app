@@ -12,7 +12,7 @@ import LongRangeWeather from "./components/LongRangeWeather";
 const App = () => {
   return (
     <Provider store={store}>
-      <div className="row">
+      <div className="row container">
         <div className="col-3">
           <Navigate />
         </div>

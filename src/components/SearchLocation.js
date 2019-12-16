@@ -16,18 +16,11 @@ class SearchLocation extends React.Component {
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(position => {
       console.log(position);
-      this.props.fetchCurrentLocation(
-        position.coords.latitude,
-        position.coords.longitude
-      );
-      this.props.fetchConditions(
-        position.coords.latitude,
-        position.coords.longitude
-      );
-      this.props.fetchForecast(
-        position.coords.latitude,
-        position.coords.longitude
-      );
+      let lat = position.coords.latitude;
+      let lon = position.coords.longitude;
+      this.props.fetchCurrentLocation(lat, lon);
+      this.props.fetchConditions(lat, lon);
+      this.props.fetchForecast(lat, lon);
     });
   }
 
@@ -46,31 +39,21 @@ class SearchLocation extends React.Component {
       }
     };
     // this.props.fetchForecast(this.state.city);
-
+    const { name, main, wind, sys } = this.props.data.weatherinfo;
     if (this.props.data.weatherinfo.hasOwnProperty("name")) {
       details = (
         <div className="mt-3 ">
           <h3>
-            Searching for: <em>{this.props.data.weatherinfo.name}</em>
+            Searching for: <em>{name}</em>
           </h3>
           <h4>Current time: {new Date().toLocaleTimeString()}</h4>
 
-          <h4>Temperature: {this.props.data.weatherinfo.main.temp} &#176;C </h4>
+          <h4>Temperature: {main.temp} &#176;C </h4>
 
-          <h4>Wind: {this.props.data.weatherinfo.wind.speed} m/s</h4>
-          <h4>Pressure: {this.props.data.weatherinfo.main.pressure} hPa</h4>
-          <h4>
-            Sunrise:{" "}
-            {new Date(
-              this.props.data.weatherinfo.sys.sunrise * 1000
-            ).toLocaleTimeString()}
-          </h4>
-          <h4>
-            Sunset:{" "}
-            {new Date(
-              this.props.data.weatherinfo.sys.sunset * 1000
-            ).toLocaleTimeString()}
-          </h4>
+          <h4>Wind: {wind.speed} m/s</h4>
+          <h4>Pressure: {main.pressure} hPa</h4>
+          <h4>Sunrise: {new Date(sys.sunrise * 1000).toLocaleTimeString()}</h4>
+          <h4>Sunset: {new Date(sys.sunset * 1000).toLocaleTimeString()}</h4>
         </div>
       );
     } else {
