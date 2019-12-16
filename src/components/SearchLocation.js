@@ -74,10 +74,10 @@ class SearchLocation extends React.Component {
         </div>
       );
     } else {
-      details = <p>You need to type a city</p>;
+      details = <p className="mt-3">You need to type a city</p>;
     }
     return (
-      <>
+      <div className="container">
         <form onSubmit={getWeatherInfo} className="mt-4">
           <div>
             <input
@@ -90,7 +90,7 @@ class SearchLocation extends React.Component {
             {details}
           </div>
         </form>
-      </>
+      </div>
     );
   }
 }

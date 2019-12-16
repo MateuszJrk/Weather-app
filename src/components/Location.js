@@ -10,7 +10,7 @@ class Location extends React.Component {
     const conditions = JSON.parse(window.localStorage.getItem("conditions"));
     console.log(conditions);
     return (
-      <div className="mt-3 ">
+      <div className="mt-3 container">
         <h3>
           Your current location: <em>{conditions.location.name}</em>
         </h3>
