@@ -44,16 +44,30 @@ class SearchLocation extends React.Component {
       details = (
         <div className="mt-3 ">
           <h3>
-            Searching for: <em>{name}</em>
+            <div className="square">
+              Searching for: <em>{name}</em>
+            </div>
           </h3>
-          <h4>Current time: {new Date().toLocaleTimeString()}</h4>
-
-          <h4>Temperature: {main.temp} &#176;C </h4>
-
-          <h4>Wind: {wind.speed} m/s</h4>
-          <h4>Pressure: {main.pressure} hPa</h4>
-          <h4>Sunrise: {new Date(sys.sunrise * 1000).toLocaleTimeString()}</h4>
-          <h4>Sunset: {new Date(sys.sunset * 1000).toLocaleTimeString()}</h4>
+          <div className="square">
+            <h4>Current time: {new Date().toLocaleTimeString()}</h4>
+          </div>
+          <div className="square">
+            <h4>Temperature: {main.temp} &#176;C </h4>
+          </div>
+          <div className="square">
+            <h4>Wind: {wind.speed} m/s</h4>
+          </div>
+          <div className="square">
+            <h4>Pressure: {main.pressure} hPa</h4>
+          </div>
+          <div className="square">
+            <h4>
+              Sunrise: {new Date(sys.sunrise * 1000).toLocaleTimeString()}
+            </h4>
+          </div>
+          <div className="square">
+            <h4>Sunset: {new Date(sys.sunset * 1000).toLocaleTimeString()}</h4>
+          </div>
         </div>
       );
     } else {

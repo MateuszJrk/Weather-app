@@ -12,39 +12,65 @@ class LongRangeWeather extends React.Component {
         <thead>
           <tr>
             <th></th>
-            <th scope="col">Tomorrow</th>
-            <th scope="col">
+            <th scope="col" className="square">
+              Tomorrow
+            </th>
+            <th scope="col" className="square">
               {conditions.forecast.list[10].dt_txt.slice(0, 10)}
             </th>
-            <th scope="col">
+            <th scope="col" className="square">
               {conditions.forecast.list[18].dt_txt.slice(0, 10)}
             </th>
-            <th scope="col">
+            <th scope="col" className="square">
               {conditions.forecast.list[26].dt_txt.slice(0, 10)}
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Temp</td>
-            <td>{conditions.forecast.list[0].main.temp} &#176;C </td>
-            <td>{conditions.forecast.list[10].main.temp} &#176;C</td>
-            <td>{conditions.forecast.list[18].main.temp} &#176;C</td>
-            <td>{conditions.forecast.list[26].main.temp} &#176;C</td>
+            <td className="square">Temp</td>
+            <td className="square">
+              {conditions.forecast.list[0].main.temp} &#176;C{" "}
+            </td>
+            <td className="square">
+              {conditions.forecast.list[10].main.temp} &#176;C
+            </td>
+            <td className="square">
+              {conditions.forecast.list[18].main.temp} &#176;C
+            </td>
+            <td className="square">
+              {conditions.forecast.list[26].main.temp} &#176;C
+            </td>
           </tr>
           <tr>
-            <td>Weather</td>
-            <td>{conditions.forecast.list[0].weather[0].main} </td>
-            <td>{conditions.forecast.list[10].weather[0].main}</td>
-            <td>{conditions.forecast.list[18].weather[0].main}</td>
-            <td>{conditions.forecast.list[26].weather[0].main}</td>
+            <td className="square">Weather</td>
+            <td className="square">
+              {conditions.forecast.list[0].weather[0].main}{" "}
+            </td>
+            <td className="square">
+              {conditions.forecast.list[10].weather[0].main}
+            </td>
+            <td className="square">
+              {conditions.forecast.list[18].weather[0].main}
+            </td>
+            <td className="square">
+              {conditions.forecast.list[26].weather[0].main}
+            </td>
           </tr>
           <tr>
-            <td>Pressure</td>
-            <td>{conditions.forecast.list[0].main.pressure} hPa </td>
-            <td>{conditions.forecast.list[10].main.pressure} hPa</td>
-            <td>{conditions.forecast.list[18].main.pressure} hPa</td>
-            <td>{conditions.forecast.list[26].main.pressure} hPa</td>
+            <td className="square">Pressure</td>
+            <td className="square">
+              {conditions.forecast.list[0].main.pressure} hPa{" "}
+            </td>
+            <td className="square">
+              {conditions.forecast.list[10].main.pressure} hPa
+            </td>
+            <td className="square">
+              {conditions.forecast.list[18].main.pressure} hPa
+            </td>
+            <td className="square">
+              {conditions.forecast.list[26].main.pressure} hPa
+            </td>
           </tr>
         </tbody>
       </table>
