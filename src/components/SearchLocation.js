@@ -8,14 +8,11 @@ import { bindActionCreators } from "redux";
 
 class SearchLocation extends React.Component {
   state = {
-    lat: "",
-    lon: "",
     city: ""
   };
 
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(position => {
-      console.log(position);
       let lat = position.coords.latitude;
       let lon = position.coords.longitude;
       this.props.fetchCurrentLocation(lat, lon);
@@ -38,7 +35,7 @@ class SearchLocation extends React.Component {
         this.props.fetchWeather(this.state.city);
       }
     };
-    // this.props.fetchForecast(this.state.city);
+
     const { name, main, wind, sys } = this.props.data.weatherinfo;
     if (this.props.data.weatherinfo.hasOwnProperty("name")) {
       details = (
@@ -93,7 +90,6 @@ class SearchLocation extends React.Component {
 }
 
 const mapStatetoProps = state => {
-  console.log(state);
   return { data: state };
 };
 

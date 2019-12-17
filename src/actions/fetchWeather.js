@@ -9,7 +9,6 @@ export function fetchWeather(city) {
         return res.json();
       })
       .then(JSONres => {
-        console.log(JSONres);
         dispatch({ type: "FETCH_WEATHER", payload: JSONres });
       })
       .catch(err => {
@@ -28,7 +27,6 @@ export function fetchCurrentLocation(lat, lon) {
       })
       .then(JSONres => {
         dispatch({ type: "FETCH_CURRENT_LOCATION", payload: JSONres });
-        console.log(JSONres);
       })
       .catch(err => {
         console.log(err);
@@ -45,7 +43,6 @@ export function fetchConditions(lat, lon) {
         return res.json();
       })
       .then(JSONres => {
-        console.log(JSONres);
         dispatch({
           type: "FETCH_AIR_CONDITIONS",
           payload: JSONres
@@ -67,7 +64,6 @@ export function fetchForecast(lat, lon) {
       })
       .then(JSONres => {
         dispatch({ type: "FETCH_FORECAST", payload: JSONres });
-        console.log(JSONres);
       })
       .catch(err => {
         console.log(err);
