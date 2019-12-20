@@ -1,7 +1,7 @@
 const initialState = {
   weatherinfo: [],
   location: [],
-  conditions: null,
+  conditions: [],
   forecast: []
 };
 

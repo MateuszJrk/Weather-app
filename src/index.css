@@ -1,7 +1,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  background: rgb(233, 233, 233);
+
   font-family: Poppins;
   height: 100%;
 }
@@ -12,7 +12,6 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
-  background: rgb(233, 233, 233);
 }
 
 header {
@@ -42,7 +41,6 @@ img.hero {
 main {
   padding: 40px;
   margin: -200px auto 0px auto;
-  background: rgb(233, 233, 233);
 }
 
 form * {
