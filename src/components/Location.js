@@ -1,10 +1,13 @@
 import React from "react";
 
+// need to fix error when user doesn't allow location
+
 const Location = () => {
   const conditions = JSON.parse(window.localStorage.getItem("conditions"));
 
   const { values, indexes } = conditions.conditions.current;
   const { name } = conditions.location;
+  // checking if location coord are available
   let details =
     conditions.location.coord.lat &&
     conditions.location.hasOwnProperty("name") ? (

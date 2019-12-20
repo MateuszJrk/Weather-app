@@ -1,5 +1,4 @@
 const APIKey = "efa2ef11f117f7485b2fca8e87a3a2f5";
-// `http://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&appid=${APIKey}&units=metric`
 export function fetchWeather(city) {
   return function(dispatch) {
     fetch(
@@ -47,7 +46,6 @@ export function fetchConditions(lat, lon) {
           type: "FETCH_AIR_CONDITIONS",
           payload: JSONres
         });
-        // console.log(JSONres.current.indexes[0].name);
       })
       .catch(err => {
         console.log(err);

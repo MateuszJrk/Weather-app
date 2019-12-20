@@ -12,6 +12,7 @@ class SearchLocation extends React.Component {
   };
 
   componentDidMount() {
+    // fetching all informations
     window.navigator.geolocation.getCurrentPosition(position => {
       let lat = position.coords.latitude;
       let lon = position.coords.longitude;
@@ -23,7 +24,7 @@ class SearchLocation extends React.Component {
 
   render() {
     let details = "";
-
+    // saving conditions in local storage
     window.localStorage.setItem("conditions", JSON.stringify(this.props.data));
 
     const getWeatherInfo = e => {
@@ -35,7 +36,7 @@ class SearchLocation extends React.Component {
         this.props.fetchWeather(this.state.city);
       }
     };
-
+    //conditionally checking if user typed a valid city
     const { name, main, wind, sys } = this.props.data.weatherinfo;
     if (this.props.data.weatherinfo.hasOwnProperty("name")) {
       details = (
